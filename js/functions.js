@@ -43,20 +43,61 @@ function result() {
     //* variabile d'appoggio
     let result = "";
 
-    //* condizioni per il calcolo del risultato
-    if (operatore === "+") {
-        result = valore1 + valore2;
-    } else if (operatore === "-") {
-        result = valore1 - valore2;
-    } else if (operatore === "x") {
-        result = valore1 * valore2;
-    } else if (operatore === "/" && valore2 === 0) {
-        result = "ERROR";
-    } else if (operatore === "/") {
-        result = valore1 / valore2;
+     //* controllo variabili globali
+    if(operatore === "" && isNaN(valore1) && isNaN(valore2)) {
+        digits.innerHTML = "0"
+        return;
+        }else if (operatore === "") {
+        digits.innerHTML = valore1;
+        return;
+    } else if (isNaN(valore1)) {
+        valore1 = 0;
+    } else if (isNaN(valore2)) {
+        valore2 = 0;
     }
 
+    //* condizioni per il calcolo del risultato
+    // if (operatore === "+") {
+    //     result = valore1 + valore2;
+    // } else if (operatore === "-") {
+    //     result = valore1 - valore2;
+    // } else if (operatore === "*") {
+    //     result = valore1 * valore2;
+    // } else if (operatore === "/" && valore2 === 0) {
+    //     result = "ERROR";
+    // } else if (operatore === "/") {
+    //     result = valore1 / valore2;
+    // }
+
+    switch (operatore) {
+        case "+":
+            result = valore1 + valore2;
+            break;
+        case "-":
+            result = valore1 - valore2;
+            break;
+        case "*":
+            result = valore1 * valore2;
+            break;
+        case "/":
+            if (valore2 !== 0) {
+                result = valore1 / valore2;
+            } else {    
+                result = "ERROR";
+            }
+            break;
+        default:
+            result = valore1;
+    }
+    
     console.log(result);
     //* stampo il risultato nell'HTML
-    digits.innerHTML = result
+    digits.innerHTML = result;
+
+    //* aggiorno l'ultimo risultato
+    valoriDigitati = result;
+    operatore = "";
+    valoriDigitati2 = "";
+
+    return;
 }
