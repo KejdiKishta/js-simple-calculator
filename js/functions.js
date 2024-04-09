@@ -3,20 +3,12 @@ function digita () {
     const clickedNumber = this.textContent;
     
     if (digits.innerHTML === "0") {
-        //* aggiungo il numero alla bar
+        //* aggiungo il numero alla bar al posto dello 0
         digits.innerHTML = clickedNumber;
     } else {
+        //* concatenazione
         digits.innerHTML += clickedNumber;
     }
-    
-    // if (digits.innerHTML === "0" && clickedNumber !== "0") {
-    //     // Sostituisci lo zero con il numero cliccato
-    //     digits.innerHTML = clickedNumber;
-    // } else if (digits.innerHTML !== "0") {
-    //     // Aggiungi semplicemente il numero cliccato
-    //     digits.innerHTML += clickedNumber;
-    // }
-    
 
     if (operatore !== "") {
         valoriDigitati2 += this.textContent
@@ -29,11 +21,32 @@ function digita () {
 
 function sign() {
     digits.textContent = "0";
+    operatore = this.textContent;
+    console.log(operatore);
+    
+    if (operatore === "C") {
+        valoriDigitati = "";
+        operatore = "";
+        valoriDigitati2 = "";
+    } 
+}
 
-    if (this.textContent !== "C"){
-        operatore = this.textContent;
-        console.log(operatore);
-    } else {
-        console.log("cancellato");
+function result() {
+    let valore1 = parseInt(valoriDigitati);
+    let valore2 = parseInt(valoriDigitati2);
+    let result = ""
+
+    if (operatore === "+") {
+        result = valore1 + valore2;
+    } else if (operatore === "-") {
+        result = valore1 - valore2;
+    } else if (operatore === "x") {
+        result = valore1 * valore2;
+    } else if (operatore === "&divide;") {
+        result = valore1 / valore2;
     }
+
+    console.log(result);
+
+    digits.innerHTML = result
 }

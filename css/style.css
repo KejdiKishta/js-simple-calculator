@@ -75,7 +75,7 @@ header{
     margin: 5px;
 }
 
-.number-flex > .sign-item {
+.equal {
     width: calc(100%/3 - 10px);
     margin: 5px;
 }

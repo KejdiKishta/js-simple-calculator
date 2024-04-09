@@ -1,7 +1,7 @@
 //* seleziono i numeri
 const numbers = document.querySelectorAll(".number-item")
 console.log(numbers);
-const digits = document.querySelector(".digits");
+let digits = document.querySelector(".digits");
 
 let valoriDigitati = "";
 let operatore = "";
@@ -23,4 +23,10 @@ for (let i = 0; i < operations.length; i++) {
     let curOperator = operations[i];
     
     curOperator.addEventListener("click", sign);
-}
+};
+
+//* seleziono il tasto = per dargli event listener
+const equal = document.querySelector(".equal");
+
+//* funzione per il calcolo del risultato
+equal.addEventListener("click", result);
