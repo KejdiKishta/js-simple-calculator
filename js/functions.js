@@ -21,7 +21,7 @@ function digita () {
 
 function sign() {
     digits.textContent = "0";
-    operatore = this.textContent;
+    operatore = this.value;
     console.log(operatore);
     
     if (operatore === "C") {
@@ -34,7 +34,8 @@ function sign() {
 function result() {
     let valore1 = parseInt(valoriDigitati);
     let valore2 = parseInt(valoriDigitati2);
-    let result = ""
+    console.log(operatore);
+    let result = "";
 
     if (operatore === "+") {
         result = valore1 + valore2;
@@ -42,7 +43,7 @@ function result() {
         result = valore1 - valore2;
     } else if (operatore === "x") {
         result = valore1 * valore2;
-    } else if (operatore === "&divide;") {
+    } else if (operatore === "/") {
         result = valore1 / valore2;
     }
 
