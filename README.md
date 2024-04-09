@@ -14,28 +14,32 @@ aggiungere event listener a tutti gli operatori
 quando si clicca su un operatore, salvare l'operatore cliccato e il primo operando, quindi resettare il numero in alto
 
 **SVOLGIMENTO**
-- [ ] seleziono tutti gli operatori
-- [ ] do un ruolo agli operatori
-- [ ] ripulisco la barra dei numeri
-
+- [x] seleziono tutti gli operatori
+- [x] assegno l'event listener
+    - [x] all' attivazione salvo il valore e l'operatore in due variabili globali
+    - [x] ripulisco la barra
 
 ### **MILESTONE 3**
 aggiungere event listener al pulsante =
 quando si clicca su =, salvare il secondo operando, effetuare il calcolo corretto in base all'operatore selezionato e visualizzare il risultato in alto
 
 **SVOLGIMENTO**
-- [ ] 
-
+- [x] seleziono l'=
+- [x] gli assegno event listener
+    -[x] al clic salvo il numero in una variabile globale
+- [x] condizione con if per stampare il risultato corretto in base all'operatore
 
 ### **MILESTONE 4**
 pulsante canc: cliccando il pulsante si resetta il calcolo
 
 **SVOLGIMENTO**
-- [ ] 
+- [x] aggiungi condizione nell'event listener degli operatori
+    -[x] se il valore è C allora azzero tutte le variabili globali
 
 
 ### **BONUS**
 verificare che non si stia cercando di dividere per 0
 
 **SVOLGIMENTO**
-- [ ] 
+- [x] condizione if nell'evemnt listener dell'=
+    -[x] se operatore = / e valore2 = 0 stampo errore
