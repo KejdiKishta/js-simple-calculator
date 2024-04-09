@@ -1,14 +1,16 @@
 //* seleziono i numeri
 const numbers = document.querySelectorAll(".number-item")
 console.log(numbers);
+const digits = document.querySelector(".digits");
 
 let valoriDigitati = "";
 let operatore = "";
+let valoriDigitati2 = "";
 
 //* funzione che digita i numeri
 for (let i = 0; i < numbers.length; i++){
     let curNumber = numbers[i];
-
+    
     curNumber.addEventListener("click", digita);
 }
 

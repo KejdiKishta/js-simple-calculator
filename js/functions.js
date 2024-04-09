@@ -1,22 +1,39 @@
 function digita () {
     //* seleziono il contenuto del testo cliccato
     const clickedNumber = this.textContent;
+    
+    if (digits.innerHTML === "0") {
+        //* aggiungo il numero alla bar
+        digits.innerHTML = clickedNumber;
+    } else {
+        digits.innerHTML += clickedNumber;
+    }
+    
+    // if (digits.innerHTML === "0" && clickedNumber !== "0") {
+    //     // Sostituisci lo zero con il numero cliccato
+    //     digits.innerHTML = clickedNumber;
+    // } else if (digits.innerHTML !== "0") {
+    //     // Aggiungi semplicemente il numero cliccato
+    //     digits.innerHTML += clickedNumber;
+    // }
+    
 
-    //* seleziono la barra in cui mettere il digit
-    let bar = document.querySelector(".digits")
-    
-    //* aggiungo il numero alla bar
-    bar.append(clickedNumber);
-    
-    valoriDigitati += this.textContent;
-    console.log(valoriDigitati);
+    if (operatore !== "") {
+        valoriDigitati2 += this.textContent
+        console.log("2 " + valoriDigitati2);
+    } else {
+        valoriDigitati += this.textContent;
+        console.log("1 " + valoriDigitati);
+    };
 }
 
 function sign() {
-    //* seleziono la barra da azzerare al click
-    let bar = document.querySelector(".digits");
-    bar.textContent = "0";
+    digits.textContent = "0";
 
-    operatore = this.textContent;
-    console.log(operatore);
+    if (this.textContent !== "C"){
+        operatore = this.textContent;
+        console.log(operatore);
+    } else {
+        console.log("cancellato");
+    }
 }
